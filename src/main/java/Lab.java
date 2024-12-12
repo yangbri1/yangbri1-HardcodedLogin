@@ -15,6 +15,17 @@ public class Lab {
      * @return true if there is a successful login, and false otherwise.
      */
     public boolean login(String username, String password){
-        return false;
+        // bitwise AND & operator to inclusively compare both sides
+        // if admin is trying to log in & their password should match "qwerty" 
+        if(username == "admin" & password == "qwerty"){
+            return true;    // log in
+        }
+        // bitwise AND & operator to check both sides before proceeding -- could change this into nested if's too
+        // preferred to use String.equals() method to compare values of String over '==' operator normally as sometimes even though values are same, may point to different mem addresses in String Pool (In Heap memory)
+        else if(username.equals("user") & password.equals("password")){
+            return true;    // log in
+        }
+        // if neither cases are true above
+        return false;   // deny entry
     }
 }
